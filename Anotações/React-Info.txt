@@ -1,0 +1,207 @@
+React
+
+Como criar um projeto ract -> crie uma pasta (ex: "fundamentosreact"), e dentro dela use o comando 
+
+npm creat vite@latest 
+
+Confirme que deseja iniciar um projeto, em seguida de o nome!
+
+Logo apos informar o nome perguntara qual frameword vc deseja inicializar, (selecione react), e a linguagem usada (JavaScript), para a realização do curso. OBS: (Lembrando que a liguagem javaScript + sw, é aproximadamente 70 vezes mais rapido).
+
+Quando a pasta for criada, use o seguinte codigo:
+
+cd (nome do projeto)
+
+dentro da pasta do projeto:
+
+npm i
+
+e quado tudo estiver cocluido:
+
+npm run dev
+
+com isso iniciara o react, e lhe entregara um endereço ip para acessar a porta do react
+
+
+
+
+
+
+
+
+
+------------------------------------
+
+Criando componentes:
+
+
+Devem ficar dentro da pasta "components";
+
+se cria um a pasta components, em seguida se cira um arquivo com o nome desejado seguindo o sistema de Camel case.
+
+Apos a criação de um arquivo , se cria:
+
+criasse uma const com o nome do arquivo:
+
+exemplo:const FirstComponents = () => {
+
+    return (
+        <div>
+            <h1>
+                meu primeiro componente
+            </h1>
+        </div>
+    );
+
+
+};
+
+depois se exporta esse arquivo como default :
+
+export default FirstComponents;
+
+
+em seguida se importa dentro da pasta App.jsx
+
+import FirstComponents from './components/FirstComponnent'
+
+e para usar oq foi digitado ou implementado desse components usasse essa estrutura dentro da função
+
+      <p>
+        <FirstComponents/>
+      </p>
+
+
+
+TemplatesExpressions usasse da mesma maneira que um componente:
+
+ const TemplateExpressions = () =>{
+
+    const name = "Humberto";
+    const data = {
+        age:31, 
+        job: "Programmer",
+    };
+
+
+    return(
+        <div>
+            <h1>Ola {name}, tudo bem?</h1>
+            <p>Profissão {data.job}</p>
+        </div>
+    )
+ }
+
+
+
+
+Hieraquia de components
+
+A hierarquia de components representa como todos sendo filho da App.jsx, porem tendo uma hieraquia dentro dos outros components.
+Onde um component pode herdar o conteudo do outro. Nesse sentido, quando chamar o component pai, o conteudo do componnet filho tambem sera apresentado
+
+
+
+
+Eventos de click:
+
+const Events = () => {
+
+    //se cria um eventro dentro do arquivo, que sera chamado dentro do botton
+    const handleMyEvent = (e) =>{
+        console.log("Ativou o evento")
+    };
+
+    return(
+        <div>
+            <div>
+                {/**
+                 * não colocasse os (), dentro das chaves, pois dessa maneira o evento seria acionado/ disparado 
+                 * quando o script for iniciado
+                 */}
+                <button onClick={handleMyEvent}>CLique aqui</button>
+            </div>
+        </div>
+    );
+};
+
+export default Events;
+
+
+Funções no evento:
+
+            <div>
+                {/**
+                 * dependendo do tamanho da função pode colocar dentro do botton
+                 */}
+                <button onClick={()=>console.log("clicou aqui primeiro")}>Clique aqui novament</button>
+            </div>
+
+
+Função de renderização:
+
+
+    const rederSomething = (x) => {
+        if(x){
+            return <h1>Render  this!</h1>
+        }else{
+            return <h1>Render this too</h1>
+        }
+    }
+            <div>
+                {/**
+                 * dependendo do tamanho da função pode colocar dentro do botton
+                 */}
+                <button onClick={()=>console.log("clicou aqui primeiro")}>Clique aqui novament</button>
+            </div>
+            <div>
+                {rederSomething(true)}
+                {rederSomething(false)}
+            </div>
+
+
+
+Challenge:
+
+const Challange = (e) =>{
+
+    const a = 5;
+    const b = 6;
+
+    const a1 = parseFloat(a);
+    const b1 = parseFloat(b);
+    const soma = a1 + b1;
+    
+    function Valor1() {
+        console.log(a)
+    }
+    function valor2(){
+        console.log(b);
+    }
+    function SomarF(){
+        console.log(soma)
+    }
+    return(
+        <div>
+            <div>
+                <button onClick={Valor1}>
+                    Mostrar valor 1
+                </button>
+
+            </div>
+            <div>
+                <button onClick={valor2}>
+                    Mostar valor 2
+                </button>
+            </div>
+            <div>
+                <button onClick={SomarF}>
+                    soma dos valores
+                </button>
+            </div>
+        </div>
+
+    );
+}
+
+export default Challange;
