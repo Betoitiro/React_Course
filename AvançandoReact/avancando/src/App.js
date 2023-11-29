@@ -15,7 +15,18 @@ import CarDetalis from './Components/CarDetalis';
 function App() {
 
   const name = "Beto";
-  const [userName] = useState("Fernanda")
+  const [userName] = useState("Fernanda");
+
+  const cars = [
+    {id: 1, brand: "ferrari", color: "Amarelo", newCar: true, km:0},
+    {id: 1, brand: "Marcedes", color: "cinza", newCar: false, km:15036},
+    {id: 1, brand: "VW", color: "Branco", newCar: true, km:0},
+    {id: 1, brand: "Volvo", color: "preto", newCar: false, km:520000},
+
+  ]
+
+
+
   return (
     <div className="App">
       <h1>
@@ -60,7 +71,25 @@ function App() {
        <CarDetalis brand ="toyota"km ={100000} color ="branco" newCar ={false}/>
        <CarDetalis brand ="Fiat"km ={0} color ="branco" newCar={true}/>
 
+
+        {/**
+         * 
+         * loop em array de objetos
+         * 
+         */}
         
+        {/**
+         * 
+         * Esse metodo de loop usando map é o mais utilizado!!
+         * 
+         */}
+        {cars.map((car)=>(
+          <CarDetalis 
+          brand={car.brand} 
+          color={car.color} 
+          km={car.km} 
+          newCar={car.newCar} />
+        ))}
 
     </div>
   );
