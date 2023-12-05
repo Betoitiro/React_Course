@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 // importando imagem que não esta na pasta public
@@ -11,11 +11,15 @@ import ConditionalRender from './Components/conditionalRender';
 import ShowUserName from './Components/ShowUserName';
 import { useState } from 'react';
 import CarDetalis from './Components/CarDetalis';
+import Fragment from './Components/Fragment';
+import Container from './Components/Container';
 
 function App() {
 
-  const name = "Beto";
+  //const name = "Beto";
   const [userName] = useState("Fernanda");
+  const myvalue = 8;
+
 
   const cars = [
     {id: 1, brand: "ferrari", color: "Amarelo", newCar: true, km:0},
@@ -91,6 +95,28 @@ function App() {
           newCar={car.newCar} />
         ))}
 
+        {/**
+         * 
+         * fragment
+         * 
+         */}
+      <Fragment propFragment="teste"/>
+
+      {/**
+       * 
+       * children
+       * 
+       */}
+
+       
+      <Container>
+          <p>
+            Este é  conteudo!!
+          </p>
+          <p>
+            O valor é {myvalue}
+          </p>
+      </Container>
     </div>
   );
 }
