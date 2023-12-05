@@ -13,6 +13,10 @@ import { useState } from 'react';
 import CarDetalis from './Components/CarDetalis';
 import Fragment from './Components/Fragment';
 import Container from './Components/Container';
+import { ExecuteFunction } from './Components/ExecuteFunction';
+import { Message } from './Components/Message';
+import ChangeMessageStates from './Components/ChangeMessageStates';
+import { UserDetalis } from './Components/UserDetalis';
 
 function App() {
 
@@ -29,6 +33,28 @@ function App() {
 
   ]
 
+  /**
+   * Estado gerenciado pelo arquivo pai
+   */
+  function showMessage(){
+    console.log("evento do componente pai!");
+  }
+
+  const [message, setmessage] = useState("");
+  
+  //Forma de alterar esse estado
+  const handleMessage = (msg) =>{
+    setmessage(msg);
+  };
+
+
+  const users = [ 
+    {id: 1, name: "humberto", job: "programador", age:18},
+    {id: 2, name: "Allyson", job: "programador", age:19},
+    {id: 3, name: "joão", job: null, age: 29},
+    {id: 4, name: "helton", job: "garson", age: 35},
+    {id:5, name: "jose", job:"estudante", age: 15}
+  ];
 
 
   return (
@@ -89,6 +115,7 @@ function App() {
          */}
         {cars.map((car)=>(
           <CarDetalis 
+          key={car.id}
           brand={car.brand} 
           color={car.color} 
           km={car.km} 
@@ -117,7 +144,33 @@ function App() {
             O valor é {myvalue}
           </p>
       </Container>
+
+      {/**
+       * Executar função
+       */}
+
+       <ExecuteFunction myFunction={showMessage}/>
+
+       //componente que consome esse estado
+       <Message msg={message} /> 
+
+       //componente que eleva e altera esse estado
+       <ChangeMessageStates handleMessage ={handleMessage} />
+
+       {/**
+        * Desafio
+        */}
+        {users.map((user) =>(
+          <UserDetalis
+            key={user.id}
+            name = {user.name}
+            job = {user.job}
+            age = {user.age}
+          />
+        ))}
     </div>
+
+
   );
 }
 
