@@ -1,4 +1,5 @@
 import './App.css';
+import CM from './components/CM';
 import MyComponents from './components/MyComponents';
 
 import {useState} from 'react';
@@ -42,6 +43,9 @@ function App() {
 
        {/**CLasse dinamic */}
        <h2 className={redTitle ? "red-title" : "title"}> Class dinamic</h2>
+
+       {/**CSS modules */}
+       <CM/>
     </div>
   );
 }
