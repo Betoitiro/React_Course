@@ -1,0 +1,63 @@
+div {
+    max-width: 500px;
+    margin: 8px auto;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: #c0bfbf;
+    font-family: Arial, sans-serif;
+}
+.logo-section{
+    line-height: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 350px;
+    display: block;
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+input[type="submit"] {
+    font: initial 18px;
+    color: rgb(221, 15, 15);
+    width: 200px;
+    border: 20px;
+    padding: 10px;
+    border-radius: 100px;
+    border: 5px;
+    font-weight: bold;
+
+}
+
+input[type="submit"] {
+    background-color:red;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.butcad{
+    font: initial 18px;
+    background-color: white;
+    width: 250px;
+    display: block;
+    border: 6px;
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
