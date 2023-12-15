@@ -1,0 +1,37 @@
+/* Loc.css */
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title img {
+    width: 40px;
+    height: auto;
+    margin-right: 80px;
+}
+
+hr {
+    border-top: 2px solid red;
+    width: 350px;
+    margin: 10px 0;
+}
+
+.i {
+    margin-top: 0px;
+}
+
+.form-group {
+    margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+input[type='text'] {
+    width: 100%;
+}
