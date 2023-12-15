@@ -1,14 +1,10 @@
 import './App.css'
-import Cad from './components/Cad'
-import Loc from './components/Loc'
-import Login from './components/Login'
-import Rodape from './components/Rodape'
-
+import Carrinho from './components/Carrinho/Carrinho'
 function App() {
 
   return (
     <>
-      <Rodape/>
+      <Carrinho/>
     </>
   )
 }
