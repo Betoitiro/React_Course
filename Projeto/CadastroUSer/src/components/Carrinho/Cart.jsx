@@ -1,11 +1,12 @@
 import React from "react";
 import './CartItem';
-import'./CartSummary';
+import './CartSummary';
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
 import './Cart.css'
 
 const Cart = () => (
+  <div>
     <main>
       <div className="page-title">Seu carrinho</div>
       <div className="content">
@@ -21,14 +22,15 @@ const Cart = () => (
               </tr>
             </thead>
             <tbody>
-                <CartItem/>
+              <CartItem />
               {/* Adicione mais itens do carrinho conforme necessário */}
             </tbody>
           </table>
-          <CartSummary/>
+          <CartSummary />
         </section>
       </div>
     </main>
-  );
-  
-  export default Cart;
+  </div>
+);
+
+export default Cart;

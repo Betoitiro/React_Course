@@ -1,12 +1,12 @@
 div {
     max-width: 500px;
     margin: 8px auto;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     background-color: #c0bfbf;
     font-family: Arial, sans-serif;
 }
-.logo-section{
+.cabcad{
     line-height: 1px;
 }
 
@@ -28,11 +28,10 @@ input[type="password"] {
     margin-bottom: 5px;
     padding: 15px;
     border-radius: 20px;
-}
-
+}z
 input[type="submit"] {
     font: initial 18px;
-    color: rgb(221, 15, 15);
+    color: white;
     width: 200px;
     border: 20px;
     padding: 10px;
@@ -61,4 +60,3 @@ input[type="submit"] {
     font-weight: bold;
 
 }
-
