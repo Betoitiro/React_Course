@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './Cad.css';
-import Logo from './assets/LogoMC.png';
-import Google from './assets/Imggoogle.png'
-import {Link} from 'react-router-dom'
+import Logo from './LogoMC.png';
+import Google from './Imggoogle.png'
 
 
 const Cad = () => {

@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import Logo from './assets/LogoMC.png';
-import Google from './assets/imggoogle.png'
+import React from 'react';
+
+
+import Logo from './LogoMC.png'
+import { useState } from 'react';
+import Google from './Imggoogle.png';
 import './Login.css';
 
 const Login = () => {
@@ -27,7 +30,8 @@ const Login = () => {
         <center>
           <img src={Logo} alt="LogoMC" className="logo-image" style={{width: '100px'}} />
           <h1>Olá! Faça seu login.</h1>
-          <br />
+          <br/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br /><br /><br />
           <p>
             Ainda não possui conta? <a href="">Faça seu cadastro</a>
           </p>
@@ -37,6 +41,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Seu E-mail</label>
+            <br />
             <input
               type="text"
               name="email"
@@ -46,7 +51,8 @@ const Login = () => {
             />
           </div>
           <div>
-            <label htmlFor="password">Sua senha <p className=''><a href="/">Esqueceu a senha</a></p></label>
+            <label htmlFor="password">Sua senha <p className=''></p></label>
+            <br />
             <input
               type="password"
               name="password"
@@ -54,6 +60,7 @@ const Login = () => {
               onChange={handlePasswordChange}
               value={password}
             />
+            <a href="/">Esqueceu a senha</a>
           </div>
           <div>
               <input type="submit" value="Enviar" />

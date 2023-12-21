@@ -1,12 +1,14 @@
-import './App.css'
-import Carrinho from './components/Carrinho/Header/Carrinho'
-import Products from './components/Carrinho/Products/Products'
+import Login from './components/LoginUser/Login'
+import Lo from './components/Localização/Loc'
+import Cadastro from './components/Cadastro/Cad'
+import Carrinho from './components/Carrinho/Cart'
+
+
 function App() {
 
   return (
     <>
-      <Carrinho />
-      <Products />
+      <Carrinho/>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import LocI from './assets/LocImg.png';
+import LocI from './LocImg.png';
 import './Loc.css';
 
 const Loc = () => {
@@ -34,7 +34,7 @@ const DeliveryAddress = () => {
                 <h3>Endereço</h3>
                 <input type="text" placeholder='EX. Rua Rio Branco' />
             </label>
-
+            <br /> <br />
             <div className="form-group">
                 <div>
                     <label htmlFor="complemento"><h3>Complemento</h3></label>
