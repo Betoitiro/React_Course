@@ -1,0 +1,9 @@
+> Foi criada uma api ficticia com o objetivo de simular uma requisição http
+
+> Na mesma foi utilizada para a sua criação, criar uma pasta com o nome data e dentro dela um db.json
+
+>Dentro do db.json vai ser colocado os dados da api
+
+> em seguida sera adicionado ao package.json o seguinte trecho de codigo:
+                         "server": "json-server --watch data/db.json"
+Que é responsavel por criar um servidor para o db.json -> local onde se encontra os dados da api
