@@ -11,7 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   //4 -> custom
-  const {data: items } = useEffect(url);
+  const {data: items, httpConfig } = useEffect(url);
 
 
   const [name, setName] = useState("")
@@ -50,6 +50,10 @@ function App() {
 
 
 
+    {/**
+  
+  
+
     const res = await fetch(url, {
       method: 'Post',
       headers: {
@@ -61,6 +65,12 @@ function App() {
     //3 - Carregamento dinamico
     const addedProduct = await res.json()
     setProducts((prevProducts) => [...prevProducts, addedProduct])
+      
+  */}
+
+  //5- refatorando Post
+
+  httpConfig(product, "POST")
 
     // Limpar os campos de entrada
     setName("");
@@ -76,7 +86,7 @@ function App() {
       </h1>
 
       <ul>
-        {itenms && items.map((products) => (
+        {itenms &&   items.map((products) => (
           <li key={products.id}>
             {products.name} - R$: {products.price}
           </li>

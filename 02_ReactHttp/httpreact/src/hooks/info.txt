@@ -1,0 +1,91 @@
+1 -> State e Configuração Inicial:
+ - Três estados são declarados usando o hook useState: config, method e callFetch.
+
+> config é utilizado para armazenar as configurações da requisição HTTP.
+> method é usado para definir se a requisição será um método GET ou POST.
+> callFetch é um sinalizador que será usado para acionar o fetch quando atualizado.
+
+{/*
+
+const [config, setConfig] = useState(null);
+const [method, setMethod] = useState(null);
+const [callFetch, setCallFetch] = useState(false);
+
+*/}
+
+2 -> Função de Configuração da Requisição POST:
+
+A função httpConfig é definida para configurar as opções de uma requisição POST.
+Ela recebe os dados e o método (esperado ser "POST").
+Configura o estado config com as opções de método, cabeçalhos e corpo da requisição.
+
+{/*
+
+const httpConfig = (data, method) => {
+  if (method === "POST") {
+    setConfig({
+      method,
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  }
+};
+
+
+*/}
+
+
+3 -> Efeito para Requisição GET:
+Um efeito colateral é utilizado para realizar uma requisição GET assim que o componente
+ é montado ou quando o estado callFetch é atualizado.
+A função fetchData faz a requisição usando o método fetch para obter dados do url e atualiza
+ o estado data com o JSON retornado.
+
+{/*
+
+useEffect(() => {
+  const fetchData = async () => {
+    const res = await fetch(url);
+    const json = await res.json();
+    setData(json);
+  };
+
+  fetchData();
+}, [url, callFetch]);
+
+
+*/}
+
+4 -> Efeito para Requisição POST:
+Outro efeito colateral é utilizado para realizar uma requisição POST quando o estado config é atualizado.
+A função httpRequest é assíncrona e faz a requisição usando o método fetch, passando as opções contidas em config.
+O resultado da requisição é convertido para JSON e, em seguida, o estado callFetch é atualizado.
+
+{/*
+
+useEffect(() => {
+  const httpRequest = async () => {
+    if (method === "POST") {
+      let fetchOptions = [url, config];
+      const res = await fetch(...fetchOptions);
+      const json = await res.json();
+      setCallFetch(json);
+    }
+  };
+}, [config]);
+
+
+*/}
+
+
+5 -> Retorno do Hook:
+O hook retorna um objeto contendo o estado data (resultado da requisição GET)
+ e a função httpConfig (para configurar a requisição POST).
+
+{/*
+
+return { data, httpConfig };
+
+*/}
