@@ -21,6 +21,8 @@ export const useFetch = (url) => {
         },
         body: JSON.stringify(data),
       });
+
+      setMethod(method)
     }
   };
 
