@@ -1,0 +1,17 @@
+-> Router é usado para criar rotas nas aplicações react!
+
+
+install: 
+
+Tem  que instalar a biblioteca no npm
+
+npm install react-Router-dom
+
+
+Introdução:
+
+BrowserRouter Define onde a area do nosso app vai trocar as paginas
+
+Router define as rotas
+
+route é um elementro deste para cada rota, configura com path e componente da rota
