@@ -15,3 +15,9 @@ BrowserRouter Define onde a area do nosso app vai trocar as paginas
 Router define as rotas
 
 route é um elementro deste para cada rota, configura com path e componente da rota
+
+
+Quando se estar trabalhando com React-Router, deve-se criar uma pasta "pages", ode se encontrara 
+
+
+E a pasta component passara a ser chamada de components
