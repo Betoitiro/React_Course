@@ -7,22 +7,22 @@ export const useFetch = (url) => {
   //5 - refatorando post
 
   //vai configurar os post e cabeçalhos
-  const [config, setconsig] = useState(null);
-  const [method, setMethod] = useState(null); // func the get or post
-  const [callFetch, setCallFetch] = useState(false) //vai ser usado para mapear junto com o fetch
-  // -> vai trazer os dados quando forem atualizados
+  const [config, setConfig] = useState(null); // Correção: nome da variável
+  const [method, setMethod] = useState(null); // func para get ou post
+  const [callFetch, setCallFetch] = useState(false); // usado para acionar o fetch
 
-  const httpConfig = (data, method)=>{
-    if(method ==="POST"){
+  // -> vai trazer os dados quando forem atualizados
+  const httpConfig = (data, method) => {
+    if (method === "POST") {
       setConfig({
-        method, 
-        headers:{
-          "Content-type": "aplication/json",
+        method,
+        headers: {
+          "Content-type": "application/json", // Correção: "application/json"
         },
         body: JSON.stringify(data),
       });
 
-      setMethod(method)
+      setMethod(method);
     }
   };
 
@@ -37,21 +37,20 @@ export const useFetch = (url) => {
   }, [url, callFetch]);
 
   //refatorando post
-
   useEffect(() => {
     const httpRequest = async () => {
       if (method === "POST") {
-
-        let fetchOptions = [url, config]
+        let fetchOptions = [url, config]; // Correção: adição de colchetes
 
         const res = await fetch(...fetchOptions);
-
         const json = await res.json();
 
         setCallFetch(json);
       }
-    }
-  }, [config])
+    };
+
+    httpRequest(); // Correção: chamada da função
+  }, [config, method]); // Correção: incluir 'method' como dependência
 
   return { data, httpConfig };
 };

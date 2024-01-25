@@ -1,42 +1,17 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-
-//4 -> custom hook
-
+import { useState } from 'react';
 import { useFetch } from './hooks/useFetch';
 
-const url = "http://localhost:3000/products"
+const url = "http://localhost:3000/products";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const { data: items, httpConfig } = useFetch(url);
 
-  //4 -> custom
-  const {data: items, httpConfig } = useEffect(url);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
 
-
-  const [name, setName] = useState("")
-  const [price, setPrice] = useState("")
-
-  /**
-   * Resgatando dados
-   */
-  /** 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setProducts(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-*/
-
-  //add produtos
+  // Adicionando produtos
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -48,50 +23,26 @@ function App() {
     // Adicionar o produto à lista de produtos
     setProducts([...products, product]);
 
-
-
-    {/**
-  
-  
-
-    const res = await fetch(url, {
-      method: 'Post',
-      headers: {
-        "content-Type": "application/json"
-      },
-      body: JSON.stringify(product),
-    })
-
-    //3 - Carregamento dinamico
-    const addedProduct = await res.json()
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
-      
-  */}
-
-  //5- refatorando Post
-
-  httpConfig(product, "POST")
+    //5- refatorando Post
+    httpConfig(product, "POST");
 
     // Limpar os campos de entrada
     setName("");
     setPrice("");
   };
 
-
-
   return (
     <div className="App">
-      <h1>
-        Lista de produtos
-      </h1>
+      <h1>Lista de produtos</h1>
 
       <ul>
-        {itenms &&   items.map((products) => (
-          <li key={products.id}>
-            {products.name} - R$: {products.price}
+        {items && items.map((product) => (
+          <li key={product.id}>
+            {product.name} - R$: {product.price}
           </li>
         ))}
       </ul>
+
       <div className='add-product'>
         <form onSubmit={handleSubmit}>
           <label>
@@ -115,9 +66,7 @@ function App() {
           <label>
             <input type='submit' value="Criar" />
           </label>
-
         </form>
-
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 //pages
 import Home from './pages/Home';
 import About from "./pages/about";
+import Cadastro from "./pages/Cadastro/Cadastro";
+import Localizacao from "./pages/Localizacao/Localizacao"
 
 //components
 import Navbar from './Components/Navbar'
@@ -28,6 +30,8 @@ function App() {
             {/** o conteudo que fica dentro de Routes é oq sempre vai mudar, ou seja os componentes da aplicação*/}
             <Route path="/" element={<Home/>}/> 
             <Route path="/about" element={<About/>}/> 
+            <Route path="/Cadastro" element={<Cadastro/>}/> 
+            <Route path="/Localizacao" element={<Localizacao/>}/>             
 
           </Routes>
         </BrowserRouter>
