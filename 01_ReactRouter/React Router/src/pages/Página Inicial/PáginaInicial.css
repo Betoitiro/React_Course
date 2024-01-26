@@ -1,0 +1,513 @@
+/*CardContainer.jsx*/
+
+.center {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+   .article-card {
+    width: 299px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 300ms;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 2.5px;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  
+  .article-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .article-card .content {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    padding: 30px 20px 20px 20px;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  }
+  
+  .article-card .date,
+  .article-card .title {
+    margin: 0;
+  }
+  
+  .article-card .date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+  }
+  
+  .article-card .title {
+    font-size: 17px;
+    color: #fff;
+  }
+
+  /*Cards1,2,3,4*/
+
+  .container-xl{
+	background-color: rgb(206, 204, 204);
+}
+h2 {
+color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 60px;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 4px;
+	border-radius: 1px;
+	background: #ff0000;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	color: #897474;
+	min-height: 325px;
+	text-align: center;
+	overflow: hidden;
+}
+.carousel .thumb-wrapper {
+	padding: 25px 15px;
+	background: #fff;
+	border-radius: 6px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+.carousel .item .img-box {
+	height: 120px;
+	margin-bottom: 20px;
+	width: 100%;
+	position: relative;
+}
+.carousel .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.carousel .item h4 {
+	font-size: 18px;
+}
+.carousel .item h4, .carousel .item p, .carousel .item ul {
+	margin-bottom: 5px;
+}
+.carousel .thumb-content .btn {
+	display: flex;
+	justify-content: center;
+	color: #ffffff;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: red;
+	border: 1px solid #ff0000;
+	padding: 10px 14px;
+	margin-top: 5px;
+	margin-right: 45px;
+	line-height: 16px;
+	border-radius: 20px;
+}
+.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+	color: #ff0000;
+	background: #fffefe;
+	box-shadow: none;
+}
+.carousel .thumb-content .btn i {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+.carousel .item-price {
+	font-size: 15px;
+	padding: 5px 0;
+}
+.carousel .item-price strike {
+	opacity: 0.8;
+	margin-right: 9px;
+}
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	background: rgb(196, 0, 0);	
+	margin: auto 0;
+	border-radius: 4px;
+	opacity: 100%;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon:hover {
+    opacity: 0.8;
+}
+/*.carousel-control-prev icon, .carousel-control-next i {
+	font-size: 36px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -12px 0 0 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    color: #ffffff;
+    text-shadow: none;
+    font-weight: bold;
+	border-radius: 10.5px;
+    background-color: red;
+	width: 25%;
+}*/
+
+.carousel-indicators {
+	font-size: 0%;
+} 
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 5px;
+	margin-bottom: -65px;
+	border-radius: 65%;
+	border: none;
+}
+
+.carousel-indicators li {	
+	background: rgba(255, 0, 0, 0.2);
+}
+.carousel-indicators li.active {	
+	background: rgba(255, 0, 0, 0.6);
+}
+.carousel .wish-icon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 99;
+	cursor: pointer;
+	font-size: 16px;
+	color: #abb0b8;
+}
+.carousel .wish-icon .fa-heart {
+	color: #ff6161;
+}
+
+/*Widget*/
+
+/*.btn:hover{
+	transform: scale(1.2);
+}*/
+.img-container{
+	max-width: 1324px;
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  margin-left: 270px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+	-webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75); 
+}
+.img-container img{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*====================================
+Hover Effect
+=====================================*/
+.img-container .overlay{
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: 0.35s;
+}
+.img-container:hover .overlay{
+	left: 0;
+}
+.img-container .overlay:hover h1{
+	opacity: 1;
+}
+/*====================================
+Hover Effect
+=====================================*/
+
+/*RESPONSIVIDADE*/
+
+@media screen and (max-width: 430px) {
+
+    /*Carousel*/
+    .carousel-inner{
+        margin-top: 90px;
+        
+    }
+
+    .carousel-item{
+      
+    }
+    
+    
+    /*CardsContainer*/
+    
+    .center {
+        display: flex;  
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    
+       .article-card {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 300ms;
+        flex: 0 0 auto;
+        margin-left: 38.6px;
+        margin-bottom: 30px;
+      }
+      
+      .article-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+      
+      .article-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .article-card .content {
+        box-sizing: border-box;
+        width: 100%;
+        position: absolute;
+        padding: 30px 20px 20px 20px;
+        height: auto;
+        bottom: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+      }
+      
+      .article-card .date,
+      .article-card .title {
+        margin: 0;
+      }
+      
+      .article-card .date {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 4px;
+      }
+      
+      .article-card .title {
+        font-size: 17px;
+        color: #fff;
+      }
+    
+       /*Cards1,2,3,4*/
+
+  .container-xl{
+    background-color: rgb(206, 204, 204);
+  }
+  h2 {
+  color: #000;
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 30px 0 60px;
+  }
+  h2::after {
+    content: "";
+    width: 100px;
+    position: absolute;
+    margin: 0 auto;
+    height: 4px;
+    border-radius: 1px;
+    background: #ff0000;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+  }
+  .carousel {
+    margin: 50px auto;
+    padding: 0 0px;
+  }
+  .carousel .item {
+    color: #897474;
+    min-height: 250px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .carousel .thumb-wrapper {
+    padding: 40px 15px;
+    background: #fff;
+    height: 550px;
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+  }
+  
+  .carousel .thumb-content .btn {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: red;
+    border: 1px solid #ff0000;
+    padding: 10px 14px;
+    margin-top: 5px;
+    margin-right: 45px;
+    line-height: 25px;
+    border-radius: 20px;
+  }
+
+  .carousel .item .img-box {
+    height: 150px;
+    margin-bottom: 50px;
+    width: 100%;
+    position: relative;
+  }
+  .carousel .item img {	
+    max-width: 120%;
+    max-height: 120%;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .carousel .item h4 {
+    font-size: 18px;
+  }
+  .carousel .item h4, .carousel .item p, .carousel .item ul {
+    margin-bottom: 5px;
+  }
+  .carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+    color: #ff0000;
+    background: #fffefe;
+    box-shadow: none;
+  }
+  .carousel .thumb-content .btn i {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .carousel .item-price {
+    font-size: 15px;
+    padding: 5px 0;
+  }
+  .carousel .item-price strike {
+    opacity: 0.8;
+    margin-right: 9px;
+  }
+  
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background: rgb(196, 0, 0);	
+    margin: auto 0;
+    border-radius: 4px;
+    opacity: 100%;
+  }
+  .carousel-control-prev-icon, .carousel-control-next-icon:hover {
+      opacity: 0.8;
+  }
+  /*.carousel-control-prev icon, .carousel-control-next i {
+    font-size: 36px;
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      margin: -12px 0 0 0;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      color: #ffffff;
+      text-shadow: none;
+      font-weight: bold;
+    border-radius: 10.5px;
+      background-color: red;
+    width: 25%;
+  }*/
+  
+  .carousel-indicators {
+    font-size: 0%;
+  } 
+  .carousel-indicators li, .carousel-indicators li.active {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    margin-bottom: -65px;
+    border-radius: 65%;
+    border: none;
+  }
+  
+  .carousel-indicators li {	
+    background: rgba(255, 0, 0, 0.2);
+  }
+  .carousel-indicators li.active {	
+    background: rgba(255, 0, 0, 0.6);
+  }
+  .carousel .wish-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    cursor: pointer;
+    font-size: 16px;
+    color: #abb0b8;
+  }
+  .carousel .wish-icon .fa-heart {
+    color: #ff6161;
+  }
+  
+    
+     
+      /*Widget*/
+       
+}
+    
+    

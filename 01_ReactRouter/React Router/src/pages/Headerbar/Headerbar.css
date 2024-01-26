@@ -1,0 +1,9 @@
+/*A cor do background no Top do Navbar*/
+.navbar{
+    background-color: red;
+}
+
+/*Os botões como Carrinho, Perfil e Favoritos*/
+.btn.rounded-pill{
+    background-color: red;
+}

@@ -14,6 +14,8 @@ const Navbar = () => {
       <Link to={"/Localizacao"}>Localizacao</Link>
       <br />
       <Link to={"/Login"}>Login</Link>
+      <br />
+      <Link to={'/PaginaInicial'}>Pagina inicial</Link>
     </nav>
   );
 };

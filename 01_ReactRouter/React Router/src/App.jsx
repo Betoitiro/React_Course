@@ -7,6 +7,8 @@ import About from "./pages/about";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Localizacao from "./pages/Localizacao/Localizacao"
 import Login from "./pages/Login/Login";
+import PaginaInicial from "./pages/Página Inicial/PáginaInicial"
+import Carrinho from "./pages/Carrinho/Carrinho"
 
 
 //components
@@ -34,9 +36,9 @@ function App() {
             <Route path="/about" element={<About/>}/> 
             <Route path="/Cadastro" element={<Cadastro/>}/> 
             <Route path="/Localizacao" element={<Localizacao/>}/>     
-            <Route path="/Login" element={<Login/>}/>             
-        
-
+            <Route path="/Login" element={<Login/>}/>    
+            <Route path="/PaginaInicial" element={<PaginaInicial/>}/>         
+            <Route path="/Carrinho" element={<Carrinho/>}/>
           </Routes>
         </BrowserRouter>
       </div>
