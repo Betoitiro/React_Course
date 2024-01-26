@@ -1,4 +1,5 @@
 import React from 'react'; // Don't forget to import React
+import { Link } from 'react-router-dom';
 import Logo from './LogoMc.png';
 import Google from './Imggoogle.png';
 import './Cadastro.css';
@@ -12,7 +13,7 @@ const Cadastro = () => {
                         <img src={Logo} alt="LogoMc" style={{ width: '100px', height: 'auto' }} />
                         <h2>Olá! Faça seu Cadastro.</h2>
                         <br /><br /><br /><br /><br /><br /><br /><br /><br />
-                        <p>Possui uma conta? </p>
+                        <p>Possui uma conta? <Link to={'/Login'}>Ir para Login</Link></p>
                     </center>
                 </div>
 

@@ -12,6 +12,8 @@ const Navbar = () => {
       <Link to={"/Cadastro"}>Cadastro</Link> {/* Correção: Tag Link correta */}
       <br />
       <Link to={"/Localizacao"}>Localizacao</Link>
+      <br />
+      <Link to={"/Login"}>Login</Link>
     </nav>
   );
 };

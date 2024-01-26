@@ -72,6 +72,7 @@ const DeliveryAddress = () => {
             </div>
 
             <center>
+                <input type="submite" placeholder="Continuar" />
             </center>
 
         </div>

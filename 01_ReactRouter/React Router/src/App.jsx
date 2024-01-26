@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import About from "./pages/about";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Localizacao from "./pages/Localizacao/Localizacao"
+import Login from "./pages/Login/Login";
+
 
 //components
 import Navbar from './Components/Navbar'
@@ -31,7 +33,9 @@ function App() {
             <Route path="/" element={<Home/>}/> 
             <Route path="/about" element={<About/>}/> 
             <Route path="/Cadastro" element={<Cadastro/>}/> 
-            <Route path="/Localizacao" element={<Localizacao/>}/>             
+            <Route path="/Localizacao" element={<Localizacao/>}/>     
+            <Route path="/Login" element={<Login/>}/>             
+        
 
           </Routes>
         </BrowserRouter>
