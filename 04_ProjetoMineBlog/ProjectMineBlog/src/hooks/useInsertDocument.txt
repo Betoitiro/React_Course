@@ -1,0 +1,30 @@
+1-> Estados do Hook:
+    response: Armazena o estado da operação de inserção.
+    loading: Indica se a operação de inserção está em andamento.
+    error: Armazena mensagens de erro durante a operação.
+2-> Hook useInsertDocument:
+    Utiliza o hook useReducer para gerenciar os estados da operação de inserção.
+    Utiliza o estado cancelled para lidar com vazamento de memória.
+
+3-> Reducer insertReducer:
+    Gerencia os estados loading e error com base nas ações:
+    "LOADING": Define loading como verdadeiro e limpa error.
+    "INSERTED_DOC": Define loading como falso e limpa error.
+    "ERROR": Define loading como falso e armazena a mensagem de erro em error.
+
+4-> Função checkCancelBeforeDispatch:
+    Verifica se a operação foi cancelada antes de despachar uma ação para o reducer.
+
+5-> Função insertDocument:
+
+    Aciona a ação "LOADING" antes de iniciar a inserção.
+    Tenta adicionar um novo documento à coleção no Firebase Firestore com um carimbo de data e hora.
+    Em caso de sucesso, aciona a ação "INSERTED_DOC" com o documento inserido.
+    Em caso de erro, aciona a ação "ERROR" com a mensagem de erro.
+
+6-> Efeito para Lidar com Vazamento de Memória:
+    Utiliza o hook useEffect para lidar com o vazamento de memória, onde define uma função 
+    de retorno que cancela a operação ao desmontar o componente.
+
+7-> Retorno do Hook:
+    Retorna um objeto contendo a função insertDocument para inserção de documentos e o estado response para acompanhar o progresso da operação.

@@ -1,0 +1,35 @@
+1 -> Importações:
+    O código importa funcionalidades necessárias do Firebase, como o banco de dados (db) e funções relacionadas à autenticação.
+    Também importa hooks do React, como useState e useEffect.
+
+2 ->Estado do Hook:
+    Define estados iniciais para error (erro durante a autenticação), loading (estado de carregamento), 
+    e cancelled (para lidar com vazamentos de memória).
+
+3 -> Instância de Autenticação Firebase:
+    Obtém uma instância de autenticação do Firebase usando getAuth().
+
+
+4 -> Função checkIfIsCancelled:
+    Uma função auxiliar que verifica se a operação deve ser cancelada para evitar vazamentos de memória.
+
+5 ->Função createUser:
+    Uma função assíncrona para criar um novo usuário usando createUserWithEmailAndPassword do Firebase.
+    Atualiza o perfil do usuário com o nome fornecido.
+    Lida com erros específicos e define mensagens de erro adequadas.
+
+6 -> Função logout:
+    Função simples para realizar o logout usando signOut do Firebase.
+
+7->Função login:
+    Função assíncrona para realizar o login usando signInWithEmailAndPassword do Firebase.
+    Lida com erros específicos e define mensagens de erro adequadas.
+
+8 -> Efeito useEffect:
+    Utiliza um efeito para garantir que cancelled seja definido como true ao desmontar o componente, evitando vazamentos de memória.
+
+9 ->Retorno do Hook:
+    Retorna um objeto com propriedades relevantes para serem utilizadas nos componentes React, como a instância de autenticação (auth), funções para criar usuário, logout, login, além dos estados de erro e carregamento.
+
+
+

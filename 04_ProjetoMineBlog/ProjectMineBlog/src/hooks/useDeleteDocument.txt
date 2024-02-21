@@ -1,0 +1,23 @@
+1 -> Importações:
+    O código importa funcionalidades necessárias do React, como useState, useEffect e useReducer.
+    Também importa funcionalidades do Firebase Firestore, como a instância do banco de dados (db), 
+    e operações de exclusão de documentos (doc e deleteDoc).
+
+2 ->Estado Inicial e Redutor:
+    initialState define o estado inicial do hook com propriedades loading e error.
+    deleteReducer é um redutor que atualiza o estado com base em ações específicas, como "LOADING"
+    (carregando), "DELETED_DOC" (documento excluído) e "ERROR" (erro).
+
+4 -> Hook useDeleteDocument:
+    Utiliza o hook useReducer para gerenciar o estado relacionado à exclusão de documentos.
+    Declara uma função checkCancelBeforeDispatch para verificar se a operação ainda não foi cancelada
+    antes de despachar uma ação para o redutor.
+
+5 -> Efeito useEffect:
+    Utiliza um efeito para garantir que cancelled seja definido como true ao desmontar o componente,
+    evitando vazamentos de memória.
+
+7 -> Retorno do Hook:
+    Retorna um objeto com duas propriedades: deleteDocument (a função para excluir documentos) e response 
+    (o estado atual, incluindo loading e error). Esse objeto pode ser utilizado em componentes React para 
+    realizar a exclusão de documentos e gerenciar o estado relacionado a essa operação.

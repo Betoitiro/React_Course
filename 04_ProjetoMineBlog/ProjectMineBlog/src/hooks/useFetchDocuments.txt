@@ -1,0 +1,30 @@
+1 ->Estados do Hook:
+
+    documents: Armazena os documentos recuperados.
+    error: Armazena mensagens de erro durante a busca.
+    loading: Indica se a busca está em andamento.
+    cancelled: Controla se a busca foi cancelada.
+
+2 ->Hook useFetchDocuments:
+
+    Utiliza o hook useEffect para lidar com a lógica de busca dos documentos quando o componente é 
+    montado ou quando as dependências (docCollection, search, uid, cancelled) mudam.
+    Declara uma função assíncrona loadData para realizar a busca dos documentos.
+    Verifica se a busca foi cancelada antes de prosseguir.
+    Ativa o estado loading.
+    Obtém uma referência à coleção no Firebase Firestore.
+    Constrói a consulta com base nos parâmetros (search, uid) e define uma ordem de classificação por data.
+    Configura um ouvinte para atualizações em tempo real usando onSnapshot.
+    Atualiza o estado documents com os dados dos documentos recuperados.
+    Em caso de erro, loga o erro e atualiza o estado error com a mensagem de erro.
+    Desativa o estado de loading após a conclusão.
+
+3 ->Log dos Documentos (para depuração):
+    console.log(documents): Imprime os documentos no console para depuração.
+
+4->Efeito para Lidar com Vazamento de Memória:
+    Utiliza outro useEffect para lidar com o vazamento de memória, onde define uma função
+     de retorno que cancela a busca ao desmontar o componente.
+
+5 ->Retorno do Hook:
+    Retorna um objeto contendo os estados documents, loading, e error para serem utilizados em componentes React.
